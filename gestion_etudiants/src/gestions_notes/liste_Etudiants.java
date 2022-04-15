@@ -9,7 +9,7 @@ public class liste_Etudiants extends  ArrayList<Etudiant> {
 		{
 			int i=indexOf(e); 
 			super.set(i,e);
-		    return false;	
+		    return true;	
 		}
 		return super.add(e);
 		
