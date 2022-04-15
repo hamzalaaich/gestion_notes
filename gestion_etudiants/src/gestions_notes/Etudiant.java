@@ -1,15 +1,18 @@
 package gestions_notes;
 
+import aiac.gi18.java.complexe.Complexe;
+
 //first part
 // declaration de variables;
 public class Etudiant implements Comparable<Etudiant> {
 	private int id;
 	private String nom;
 	private double note;
-	
+
 	public void setNote(double note) {
 		this.note = note;
 	}
+
 	public double getNote() {
 		return note;
 	}
@@ -22,14 +25,17 @@ public class Etudiant implements Comparable<Etudiant> {
 	}
 
 //redefinition de la methode to string;
-public String toString()
-	{
+	public String toString() {
 		return (this.nom + ":" + this.note);
 	}
 
 // redefinition de la methode equals.
-	public boolean equals(Etudiant etd) {
-		if (this.id == etd.id)
+	@Override
+	public boolean equals(Object obj) {
+		if (! (obj instanceof Etudiant) ){
+			return false;
+		}
+		else if (this.id == ((Etudiant)obj).id)
 			return true;
 		else
 			return false;
